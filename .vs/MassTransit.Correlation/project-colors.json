@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "81405c1c-7e51-46ac-8aa4-224fda3b2a75": {
+      "ProjectGuid": "81405c1c-7e51-46ac-8aa4-224fda3b2a75",
+      "DisplayName": "MassTransit.Correlation.Business",
+      "ColorIndex": 0
+    },
+    "a918d3f7-f008-4181-b122-8556e6a358ef": {
+      "ProjectGuid": "a918d3f7-f008-4181-b122-8556e6a358ef",
+      "DisplayName": "MassTransit.Correlation.ConsoleApp",
+      "ColorIndex": 1
+    },
+    "b3b0916b-bbdd-471a-b0e3-1d8b1a8e364d": {
+      "ProjectGuid": "b3b0916b-bbdd-471a-b0e3-1d8b1a8e364d",
+      "DisplayName": "MassTransit.Correlation.Service",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

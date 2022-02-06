@@ -1,0 +1,14 @@
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\bin\Debug\net6.0\MassTransit.Correlation.Business.deps.json
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\bin\Debug\net6.0\MassTransit.Correlation.Business.runtimeconfig.json
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\bin\Debug\net6.0\MassTransit.Correlation.Business.dll
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\bin\Debug\net6.0\ref\MassTransit.Correlation.Business.dll
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\bin\Debug\net6.0\MassTransit.Correlation.Business.pdb
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\obj\Debug\net6.0\MassTransit.Correlation.Business.csproj.AssemblyReference.cache
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\obj\Debug\net6.0\MassTransit.Correlation.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\obj\Debug\net6.0\MassTransit.Correlation.Business.AssemblyInfoInputs.cache
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\obj\Debug\net6.0\MassTransit.Correlation.Business.AssemblyInfo.cs
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\obj\Debug\net6.0\MassTransit.Correlation.Business.csproj.CoreCompileInputs.cache
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\obj\Debug\net6.0\MassTransit.Correlation.Business.dll
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\obj\Debug\net6.0\ref\MassTransit.Correlation.Business.dll
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\obj\Debug\net6.0\MassTransit.Correlation.Business.pdb
+C:\Study2022\MassTransit.Correlation\MassTransit.Correlation.Business\obj\Debug\net6.0\MassTransit.Correlation.Business.genruntimeconfig.cache
