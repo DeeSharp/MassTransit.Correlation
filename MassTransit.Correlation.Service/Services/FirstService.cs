@@ -13,14 +13,10 @@ public class FirstService
         _logger = logger;
     }
 
-    public Task Process(FirstMessage firstEvent, ConsumeContext<FirstMessage> consumeContext)
+    public Task Process(FirstMessage firstMessage)
     {
-        _logger.LogInformation("Entered Process method of FirstService");
         var secondMessage = new SecondMessage();
-        //consumeContext.Publish(secondMessage);
         _busControl.Publish(secondMessage);
-        _logger.LogInformation("Exit FirstService");
-        _logger.LogInformation("-------------------------------------------------------------");
         return Task.CompletedTask;
     }
 }

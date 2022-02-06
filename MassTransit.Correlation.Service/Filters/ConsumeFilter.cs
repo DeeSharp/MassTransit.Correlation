@@ -55,7 +55,6 @@ public class SimpleConsumeMessageFilter<TContext, TMessage> : IFilter<TContext>
 
     public async Task Send(TContext context, IPipe<TContext> next)
     {
-        //Log.Information($"Entered SimpleConsumeMessageFilter with context: {context.GetType().Name} with CorrelationId: {context.CorrelationId} and ConversationId: {context.ConversationId} and InitiatorId: {context.InitiatorId} for message: {context.Message.GetType().Name}");
         LogContext.PushProperty("CorrelationId", context.CorrelationId);
         LogContext.PushProperty("ConversationId", context.ConversationId);
         LogContext.PushProperty("InitiatorId", context.InitiatorId);
@@ -64,7 +63,7 @@ public class SimpleConsumeMessageFilter<TContext, TMessage> : IFilter<TContext>
 
     public void Probe(ProbeContext context)
     {
-        context.CreateScope("my-consume-message-filter");
+        context.CreateScope("consume-filter");
     }
 }
 

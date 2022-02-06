@@ -25,20 +25,11 @@ public static class Extensions
 
             x.UsingRabbitMq((context, cfg) =>
             {
-                //cfg.ConnectConsumerConfigurationObserver(new SimpleConsumePipeSpecObserver());
-                //cfg.ConfigurePublish(ppc =>
-                //{
-                //    //ppc.AddPipeSpecification(new SimplePublishPipeSpec());
-                //    ppc.ConnectPublishPipeSpecificationObserver(new SimplePublishPipeSpecObserver());
-                //});
-
-
-                cfg.UseSendFilter(typeof(ScopedSendFilter<>), context);
-                cfg.UsePublishFilter(typeof(ScopedPublishFilter<>), context);
-                cfg.UseConsumeFilter(typeof(ScopedConsumeFilter<>), context);
-
-                
-
+                cfg.ConnectConsumerConfigurationObserver(new SimpleConsumePipeSpecObserver());
+                cfg.ConfigurePublish(ppc =>
+                {
+                    ppc.ConnectPublishPipeSpecificationObserver(new SimplePublishPipeSpecObserver());
+                });
                 cfg.UseDelayedMessageScheduler();
                 cfg.ConfigureEndpoints(context);
                 cfg.Host("localhost", rmq =>

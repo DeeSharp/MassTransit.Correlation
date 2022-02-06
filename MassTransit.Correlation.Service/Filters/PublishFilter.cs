@@ -49,12 +49,10 @@ public class SimplePublishMessageFilter<TMessage> : IFilter<PublishContext<TMess
 
     public async Task Send(PublishContext<TMessage> context, IPipe<PublishContext<TMessage>> next)
     {
-        //Log.Information($"Entered SimplePublishMessageFilter with context: {context.GetType().Name} with CorrelationId: {context.CorrelationId} and ConversationId: {context.ConversationId} and InitiatorId: {context.InitiatorId} for message: {typeof(TMessage).Name}");
 
         if (context.Headers.TryGetHeader("ConversationId", out object @value))
         {
             var conversationId = Guid.Parse(@value.ToString());
-            //Log.Information($"SimplePublishMessageFilter context headers has ConversationId of: {conversationId}");
             context.ConversationId = conversationId;
         }
         else
@@ -74,17 +72,27 @@ public class SimplePublishMessageFilter<TMessage> : IFilter<PublishContext<TMess
     }
 }
 
-public class SomePayload
+public class SimplePublishMessagePipeSpec<TMessage> : IPipeSpecification<PublishContext<TMessage>> where TMessage : class
 {
-    public SomePayload(string text)
+    public void Apply(IPipeBuilder<PublishContext<TMessage>> builder)
     {
-        Text = text;
+        builder.AddFilter(new SimplePublishMessageFilter<TMessage>());
     }
 
-    public string Text { get; }
+    public IEnumerable<ValidationResult> Validate()
+    {
+        return Enumerable.Empty<ValidationResult>();
+    }
 }
 
-
+public class SimplePublishPipeSpecObserver : IPublishPipeSpecificationObserver
+{
+    public void MessageSpecificationCreated<TMessage>(IMessagePublishPipeSpecification<TMessage> specification)
+        where TMessage : class
+    {
+        specification.AddPipeSpecification(new SimplePublishMessagePipeSpec<TMessage>());
+    }
+}
 
 
 
@@ -102,24 +110,17 @@ public class SimplePublishPipeSpec : IPipeSpecification<PublishContext>
 }
 
 
-public class SimplePublishMessagePipeSpec<TMessage> : IPipeSpecification<PublishContext<TMessage>> where TMessage : class
+
+
+
+
+
+public class SomePayload
 {
-    public void Apply(IPipeBuilder<PublishContext<TMessage>> builder)
+    public SomePayload(string text)
     {
-        builder.AddFilter(new SimplePublishMessageFilter<TMessage>());
+        Text = text;
     }
 
-    public IEnumerable<ValidationResult> Validate()
-    {
-        return Enumerable.Empty<ValidationResult>();
-    }
-}
-
-class SimplePublishPipeSpecObserver : IPublishPipeSpecificationObserver
-{
-    public void MessageSpecificationCreated<TMessage>(IMessagePublishPipeSpecification<TMessage> specification)
-        where TMessage : class
-    {
-        specification.AddPipeSpecification(new SimplePublishMessagePipeSpec<TMessage>());
-    }
+    public string Text { get; }
 }
