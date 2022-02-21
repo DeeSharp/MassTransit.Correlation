@@ -18,9 +18,11 @@ public class ThirdConsumer : IConsumer<ThirdMessage>
     {
         _logger.LogInformation($"ThirdConsumer CorrelationId: {context.CorrelationId} and ConversationId: {context.ConversationId} and InitiatorId: {context.InitiatorId}");
         _service.Process(context.Message);
-
+        _logger.LogInformation("Some log message");
         _logger.LogError("{@service}: {@errorType} error fetching data. {message}", "IntegrationName", "Generic", "ReasonPhrase");
         return Task.CompletedTask;
+
+
     }
 }
 
