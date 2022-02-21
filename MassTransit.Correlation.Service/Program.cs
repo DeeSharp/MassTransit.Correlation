@@ -1,6 +1,4 @@
-using Automatonymous;
 using MassTransit.Correlation.Service;
-using MassTransit.Correlation.Service.Consumers;
 using MassTransit.Correlation.Service.Services;
 
 IHost host = Host.CreateDefaultBuilder(args)

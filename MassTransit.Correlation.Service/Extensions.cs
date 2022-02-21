@@ -25,12 +25,12 @@ public static class Extensions
 
             x.UsingRabbitMq((context, cfg) =>
             {
-                //cfg.ConnectConsumerConfigurationObserver(new SimpleConsumePipeSpecObserver());
-                //cfg.ConfigurePublish(ppc =>
-                //{
-                //    //ppc.AddPipeSpecification(new SimplePublishPipeSpec());
-                //    ppc.ConnectPublishPipeSpecificationObserver(new SimplePublishPipeSpecObserver());
-                //});
+                cfg.ConnectConsumerConfigurationObserver(new SimpleConsumePipeSpecObserver());
+                cfg.ConfigurePublish(ppc =>
+                {
+                    ppc.AddPipeSpecification(new SimplePublishPipeSpec());
+                    ppc.ConnectPublishPipeSpecificationObserver(new SimplePublishPipeSpecObserver());
+                });
 
 
                 cfg.UseSendFilter(typeof(ScopedSendFilter<>), context);

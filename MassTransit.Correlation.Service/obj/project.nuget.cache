@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lBNoKcUmwQeg3220ptLBP5T3DJ+YWeq5ziHWQDAPk8RuZhLcAiOGDmYRX85DP81HS4YbrPINdy39cUi+0Sqviw==",
+  "dgSpecHash": "bWAOWAq5KMIvCuMIyyO/6CkSbuvl5G8wGrJJ3sCsaDAXPWrOAjl3VKDXW7VKqaBFv566XfF/4idjpJ5H89m1xg==",
   "success": true,
   "projectFilePath": "C:\\Study2022\\MassTransit.Correlation\\MassTransit.Correlation.Service\\MassTransit.Correlation.Service.csproj",
   "expectedPackageFiles": [

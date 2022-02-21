@@ -17,7 +17,7 @@ public class FirstConsumer : IConsumer<FirstMessage>
     public Task Consume(ConsumeContext<FirstMessage> context)
     {
         _logger.LogInformation($"FirstConsumer CorrelationId: {context.CorrelationId} and ConversationId: {context.ConversationId} and InitiatorId: {context.InitiatorId}");
-        _service.Process(context.Message, context);
+        _service.Process(context);
         return Task.CompletedTask;
     }
 }
